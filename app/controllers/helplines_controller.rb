@@ -1,0 +1,2 @@
+class HelplinesController < ApplicationController
+end
