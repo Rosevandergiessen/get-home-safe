@@ -5,4 +5,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # user route implemented through devise
+  # messages and chatroom for later
+  
+  resources :chatrooms, only: %i[index show create] do
+    resources :messages, only: %i[create]
+  end
+
+  resources :friends, only: %i[create index show destroy] do
+    resources :user_friends, only: %i[create]
+  end
+
+  resources :helplines, only: %i[show]
 end
