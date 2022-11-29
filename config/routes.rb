@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   # user route implemented through devise
   # messages and chatroom for later
-  
+
   resources :chatrooms, only: %i[index show create] do
     resources :messages, only: %i[create]
   end
@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   end
 
   resources :helplines, only: %i[show]
+
+  get 'find_friends', to: 'friends#find_friends'
 end
