@@ -1,0 +1,31 @@
+.footer {
+  background: $off-white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100vw;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  text-align: center;
+}
+.footer-links a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.icon-link {
+  color: $dark-gray;
+  &:hover {
+      color: $green;
+    }
+}
