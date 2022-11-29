@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
