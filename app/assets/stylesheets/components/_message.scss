@@ -1,0 +1,32 @@
+.message-row {
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+// To style the message itself
+.sender-style, .receiver-style {
+  width: 70%;
+  max-width: 400px;
+  border-radius: 4px;
+  padding: 8px;
+  min-height: 80px;
+}
+
+.sender-style {
+  background-color: #FFFFFF;
+  border: 1px solid black;
+}
+
+.receiver-style {
+  background-color: #E5CCE8;
+  border: 1px solid black;
+}
+
+.send {
+  background-color: #E5CCE8;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: rgb(187, 113, 187);
+  }
+}
