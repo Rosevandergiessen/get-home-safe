@@ -4,10 +4,13 @@ class FriendsController < ApplicationController
   end
 
   def create
-    @friend = Friend.new(friend_params)
-    if @friend.save
-      redirect_to friends_path
-    end
+    @friend = Friend.new(user_id: params[:user])
+    @friend.save
+
+    @user_friend = UserFriend.new(user_id: current_user.id, friend_id: @friend.id)
+    @user_friend.save!
+
+    redirect_to friends_path
   end
 
   def index
@@ -17,9 +20,4 @@ class FriendsController < ApplicationController
 
 
 
-  private
-
-  def friend_params
-    params.require(:friend).permit(:user_id, :name)
-  end
 end
