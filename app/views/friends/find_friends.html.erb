@@ -1,5 +1,17 @@
 <h1>Friends</h1>
 <div class="container">
 <h3>Search bar can go here or whatever</h3>
-<p>Dani <%= link_to "add as friend", friends_path(user: User.last.id), data: { turbo_method: :post } %></p>
+<%= form_with url: find_friends_path, method: :get, class: "d-flex pb-3" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a friend"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 </div>
+
+<% @users.each do |user| %>
+  <%= user.first_name %>
+  <%= link_to "add as friend", friends_path(user: user.id), data: { turbo_method: :post } %>
+<% end %>
