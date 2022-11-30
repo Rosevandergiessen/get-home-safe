@@ -1,9 +1,9 @@
-<div class="center">
+<div class="center" data-controller="activation-button">
   <div class="main-avatar">
-    <div>
-      <%= link_to chatrooms_path do %>
-      <img class="avatar-large" src="https://ca.slack-edge.com/T02NE0241-U045M36JRJP-9f2b62fd8ed7-512" alt="">
-      <% end %>
+    <div class="activate" data-action="click->activation-button#change">
+
+      <img class="avatar-large" data-activation-button-target="image" src="https://ca.slack-edge.com/T02NE0241-U045M36JRJP-9f2b62fd8ed7-512" alt="">
+
     </div>
   </div>
 
