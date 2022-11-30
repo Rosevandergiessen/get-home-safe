@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :helplines, only: %i[show]
 
   get 'find_friends', to: 'friends#find_friends'
+  get 'profile/:id', to: 'pages#profile', as: 'profile'
 end

@@ -7,26 +7,26 @@
     </div>
   </div>
 
+
   <div class="friend-avatar flex-container">
     <div>
-      <%= link_to chatrooms_path do %>
-      <img class="avatar flex-item" src="https://ca.slack-edge.com/T02NE0241-U045BG2543X-c901dae64dd9-512" alt="">
-      <% end %>
-    </div>
-    <div>
-      <%= link_to chatrooms_path do %>
-      <img class="avatar flex-item" src="https://ca.slack-edge.com/T02NE0241-U045DF4MG86-193c0afdd00a-512" alt="">
-      <% end %>
-    </div>
-    <div>
-      <%= link_to chatrooms_path do %>
-      <img class="avatar flex-item" src="https://ca.slack-edge.com/T02NE0241-UKQMSQ22E-fcbfe66ea66b-512" alt="">
-      <% end %>
-    </div>
-    <div>
-      <%= link_to chatrooms_path do %>
-      <img class="avatar flex-item" src="https://ca.slack-edge.com/T02NE0241-U01K1K91588-4a6bc04f4618-512" alt="">
-      <% end %>
-    </div>
+    <% current_user.friends.each do |friend| %>
+
+    <%= link_to friend.user.first_name, chatroom_path(friend.user_friends.find_by(user_id: current_user).chatroom)%>
+
+  <% end %>
+
+<% friends = [] %>
+<% Friend.where(user: current_user).each do |friend| %>
+<% friends += UserFriend.where(friend: friend) %>
+<% end %>
+<% friends.each do |friend| %>
+<%= link_to friend.user.first_name, chatroom_path(friend.chatroom) %>
+<% end %>
   </div>
+
+
+
+
+
 </div>

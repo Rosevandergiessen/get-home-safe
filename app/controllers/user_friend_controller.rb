@@ -1,0 +1,3 @@
+class UserFriendController < ApplicationController
+
+end
