@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
-      end
+  end
 
   def map
     @markers = [
@@ -16,4 +16,5 @@ class PagesController < ApplicationController
         lng: current_user.longitude
       }
     ]
+  end
 end
