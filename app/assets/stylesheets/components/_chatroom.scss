@@ -1,7 +1,7 @@
 .chatroom {
   background: white;
   margin-top: 9px;
-  height: calc(100vh - 75px);
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,4 +27,6 @@
       margin-bottom: 0;
     }
   }
+
+
 }
