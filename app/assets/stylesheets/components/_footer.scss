@@ -5,6 +5,8 @@
   justify-content: space-between;
   height: 100px;
   width: 100vw;
+  position: fixed;
+  bottom: 0;
 }
 .footer-links {
   display: flex;
@@ -14,6 +16,7 @@
   text-align: center;
 }
 .footer-links a {
+  color: $dark-gray;
   text-decoration: none;
   font-size: 1.5rem;
   padding: 0 1rem;
