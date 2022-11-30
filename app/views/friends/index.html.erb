@@ -1,11 +1,14 @@
-<h3>My friends</h3>
+<h3>MY FRIENDS</h3>
 <div class="container">
+<%= link_to "ADD A FRIEND", find_friends_path %>
 <% @friends.each do |friend| %>
+<div class="card-product">
 <% if friend.user.id == current_user.id %>
 <% friend = Friend.find(friend.friend_id).user %>
-<li><%= link_to friend.first_name, profile_path(friend.id) %></li>
+<%= link_to friend.first_name, profile_path(friend.id), class:"text" %>
 <% else %>
-<li><%= link_to friend.user.first_name, profile_path(friend.user.id) %></li>
+<%= link_to friend.user.first_name, profile_path(friend.user.id), class:"text"  %>
 <% end %>
+</div>
 <% end %>
 </div>
