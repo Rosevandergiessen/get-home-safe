@@ -1,0 +1,8 @@
+<%= @user.first_name %>
+
+  <% user_friend = Friend.find_by(user_id: @user.id).user_friends.find_by(user_id: current_user.id) %>
+  <% if user_friend %>
+    <%= link_to "Message", chatroom_path(user_friend.chatroom) %>
+  <% else %>
+   Profile
+  <% end %>

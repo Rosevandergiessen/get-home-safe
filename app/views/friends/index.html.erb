@@ -1,6 +1,11 @@
 <h3>My friends</h3>
 <div class="container">
 <% @friends.each do |friend| %>
-<li><%= friend.user.first_name %></li>
+<% if friend.user.id == current_user.id %>
+<% friend = Friend.find(friend.friend_id).user %>
+<li><%= link_to friend.first_name, profile_path(friend.id) %></li>
+<% else %>
+<li><%= link_to friend.user.first_name, profile_path(friend.user.id) %></li>
+<% end %>
 <% end %>
 </div>

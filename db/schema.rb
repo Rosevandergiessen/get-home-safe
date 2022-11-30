@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_135627) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_111310) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_135627) do
     t.bigint "friend_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "chatroom_id"
+    t.index ["chatroom_id"], name: "index_user_friends_on_chatroom_id"
     t.index ["friend_id"], name: "index_user_friends_on_friend_id"
     t.index ["user_id"], name: "index_user_friends_on_user_id"
   end
@@ -75,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_135627) do
   add_foreign_key "friends", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "user_friends", "chatrooms"
   add_foreign_key "user_friends", "friends"
   add_foreign_key "user_friends", "users"
 end
