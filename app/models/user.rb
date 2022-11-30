@@ -12,4 +12,7 @@ class User < ApplicationRecord
   validates :phone_number, presence: true
   validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
