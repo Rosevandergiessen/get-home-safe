@@ -1,0 +1,26 @@
+.button-purple-shadow {
+  @include button-standard;
+  background-color: white;
+  color: $dark-gray;
+  box-shadow: 0.313rem 0.313rem 0 $purple;
+  font-size: 1.5rem;
+  &:hover {
+    background-color: $purple;
+    color: $off-white;
+    box-shadow: 0.313rem 0.313rem 0 $dark-gray;
+    }
+}
+
+.login {
+ text-align: center;
+
+ .text {
+  color: #00D9B2;
+  text-decoration: none;
+ }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
