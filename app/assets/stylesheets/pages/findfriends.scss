@@ -1,32 +1,17 @@
-.card-product {
-  height: 90px;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15px;
-  border: 1px solid black;
-
-  &:hover {
-    background-color: #E5CCE8;
-    font-weight: bold;
-  }
-
-
-  .text {
-    text-decoration: none;
-    color: black;
-    margin: 0 auto;
-    font-size: 14px;
-  }
-
-  .card-img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
+h1 {
+  font-weight: 400;
 }
 
-h3 {
-  font-weight: 400;
+.names a {
+  text-decoration: none;
+  color: #00D9B2;
+}
+
+.middle {
+  position: absolute;
+      top: 40%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  width: 90%;
 }
