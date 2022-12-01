@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 .center {
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,9 +20,9 @@
 
 .username {
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
-  padding-bottom: 20px;
+  color: #E5CCE8;
 }
 
 .image {
@@ -30,7 +31,8 @@
   border: 1px solid black;
 }
 
-.test {
+.picture {
+  margin-top: 20px;
   width: 260px;
   height: 265px;
   object-fit: cover;
