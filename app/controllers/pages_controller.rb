@@ -17,4 +17,7 @@ class PagesController < ApplicationController
       }
     ]
   end
+
+  def my_profile
+  end
 end

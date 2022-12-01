@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   get 'find_friends', to: 'friends#find_friends'
   get 'profile/:id', to: 'pages#profile', as: 'profile'
+  get 'my_profile', to: 'pages#my_profile', as: 'my_profile'
 end
