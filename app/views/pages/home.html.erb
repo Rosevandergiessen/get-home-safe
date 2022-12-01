@@ -4,7 +4,13 @@
     </div>
   <div class="main-avatar">
     <div class="activate" data-action="click->activation-button#change">
-      <img class="avatar-large" data-activation-button-target="image" src="https://ca.slack-edge.com/T02NE0241-U045M36JRJP-9f2b62fd8ed7-512" alt="">
+
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "test rounded-circle", data: { activation_button_target: "image" }%>
+        <% else %>
+        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle", data: { activation_button_target: "image" } %>
+      <% end %>
+
 
     </div>
   </div>
