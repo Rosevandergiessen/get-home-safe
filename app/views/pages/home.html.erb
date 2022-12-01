@@ -1,7 +1,9 @@
 <div class="center" data-controller="activation-button">
+    <div class="username">
+      <%= current_user.first_name.upcase%>
+    </div>
   <div class="main-avatar">
     <div class="activate" data-action="click->activation-button#change">
-
       <img class="avatar-large" data-activation-button-target="image" src="https://ca.slack-edge.com/T02NE0241-U045M36JRJP-9f2b62fd8ed7-512" alt="">
 
     </div>
@@ -11,8 +13,14 @@
   <div class="friend-avatar flex-container">
     <div>
     <% current_user.friends.each do |friend| %>
+    <%= link_to chatroom_path(friend.user_friends.find_by(user_id: current_user).chatroom) do%>
+    <% if friend.user.photo.attached? %>
+        <%= cl_image_tag friend.user.photo.key, class: "rounded-circle image"%>
+        <% else %>
+        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle image" %>
+      <% end %>
+    <% end %>
 
-    <%= link_to friend.user.first_name, chatroom_path(friend.user_friends.find_by(user_id: current_user).chatroom)%>
 
   <% end %>
 

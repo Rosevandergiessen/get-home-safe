@@ -1,8 +1,27 @@
-<%= @user.first_name %>
+<div class="container">
+  <div class="details">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, class: "rounded-circle img"%>
+        <% else %>
+        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle img" %>
+      <% end %>
+      <div class="name text-danger">
+        <%= @user.first_name.upcase %> <%= @user.last_name.upcase %>
+      </div>
 
-  <% user_friend = Friend.find_by(user_id: @user.id).user_friends.find_by(user_id: current_user.id) %>
-  <% if user_friend %>
-    <%= link_to "Message", chatroom_path(user_friend.chatroom) %>
-  <% else %>
-   Profile
-  <% end %>
+    <div class="p-3">
+    <% user_friend = Friend.find_by(user_id: @user.id).user_friends.find_by(user_id: current_user.id) %>
+          <% if user_friend %>
+            <%= link_to "Message", chatroom_path(user_friend.chatroom), class: "button-green-shadow" %>
+            <% else %>
+            Profile
+      <% end %>
+    </div>
+
+    <div class="small-details">
+      <p>EMAIL <span style="color: #6C27FF"><%= @user.email.upcase%></span></p>
+      <p>PHONE NUMBER <span style="color: #6C27FF"><%= @user.phone_number %></span></p>
+    </div>
+
+  </div>
+</div>
