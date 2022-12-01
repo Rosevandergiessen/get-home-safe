@@ -11,7 +11,11 @@ export default class extends Controller {
     )
 
   }
+
+
   change() {
+    this.imageTarget.classList.toggle("avatar-active")
+
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
