@@ -7,8 +7,26 @@
   margin: 15px;
   border: 1px solid black;
 
+  &:hover {
+    background-color: #E5CCE8;
+    font-weight: bold;
+  }
+
+
   .text {
     text-decoration: none;
-    text-align: center;
+    color: black;
+    margin: 0 auto;
+    font-size: 14px;
   }
+
+  .card-img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+}
+
+h3 {
+  font-weight: 400;
 }
