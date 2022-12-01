@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-
   def profile
     @user = User.find(params[:id])
   end
@@ -16,5 +15,14 @@ class PagesController < ApplicationController
         lng: current_user.longitude
       }
     ]
+  end
+
+  def send_location
+
+    LocationChannel.broadcast_to(
+      "GHS",
+      render_to_string(partial: "pages/cords", locals: { lng: params[:lat], lat: params[:lat] })
+    )
+    head :ok
   end
 end

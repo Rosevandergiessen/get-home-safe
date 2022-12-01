@@ -1,9 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
+import { createConsumer } from "@rails/actioncable"
 
 // Connects to data-controller="activation-button"
 export default class extends Controller {
   static targets=["image"]
   connect() {
+    this.channel = createConsumer().subscriptions.create(
+      { channel: "LocationChannel" },
+      { received: data => console.log(data) }
+    )
+
+  }
+  change() {
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -12,6 +20,10 @@ export default class extends Controller {
 
     function success(pos) {
       const crd = pos.coords;
+
+      fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+      .then(response => response.text())
+      .then(data => console.log(data))
 
       console.log('Your current position is:');
       console.log(`Latitude : ${crd.latitude}`);
@@ -24,8 +36,6 @@ export default class extends Controller {
     }
 
     navigator.geolocation.getCurrentPosition(success, error, options);
-  }
-  change() {
-    this.imageTarget.classList.add("mb-5")
+
   }
 }
