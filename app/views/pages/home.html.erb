@@ -4,7 +4,7 @@
     </div>
   <div class="main-avatar">
     <div class="activate" data-action="click->activation-button#change">
-
+    
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "picture rounded-circle", data: { activation_button_target: "image" }%>
         <% else %>

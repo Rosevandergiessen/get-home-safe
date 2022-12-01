@@ -7,14 +7,14 @@
 .rounded-circle {
   width: 250px;
   border-radius: 50%;
-  border: red 8px solid;
+  border: #E5CCE8 8px solid;
   opacity: 0.4;
 }
 
 .avatar-active {
   width: 250px;
   opacity: 1.0;
-  border: rgb(56, 229, 77) 8px solid;
+  border: #00D9B2 8px solid;
   transition: opacity 0.5s linear 0.5s, border 1000ms;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
 	transform: scale(1);
@@ -24,7 +24,7 @@
 @keyframes pulse {
 	0% {
 		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(56, 229, 77, 0.8);
+		box-shadow: 0 0 0 0 #00D9B2;
 	}
 
 	70% {
