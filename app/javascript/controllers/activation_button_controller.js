@@ -4,6 +4,12 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets=["image"]
   connect() {
+
+  }
+
+  change() {
+    this.imageTarget.classList.toggle("avatar-active")
+
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
@@ -23,9 +29,9 @@ export default class extends Controller {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-    navigator.geolocation.getCurrentPosition(success, error, options);
-  }
-  change() {
-    this.imageTarget.classList.add("mb-5")
+
+    window.setInterval(navigator.geolocation.getCurrentPosition(success, error, options), 2000);
+    // while (true) {
+
   }
 }

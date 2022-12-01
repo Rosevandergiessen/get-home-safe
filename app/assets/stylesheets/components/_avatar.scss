@@ -8,7 +8,14 @@
   width: 250px;
   border-radius: 50%;
   border: rgb(0, 0, 0) 1px solid;
+  transition: border 300ms;
 }
+
+.avatar-active {
+  width: 250px;
+  border: greenyellow 30px solid;
+}
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
