@@ -10,12 +10,8 @@
         <% else %>
         <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "picture rounded-circle", data: { activation_button_target: "image" } %>
       <% end %>
-
-
     </div>
   </div>
-
-
 
   <div class="friend-avatar flex-container">
     <div>
@@ -30,8 +26,6 @@
         <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle image" %>
       <% end %>
     <% end %>
-
-
   <% end %>
 
 <% friends = [] %>
@@ -42,9 +36,6 @@
 <%= link_to friend.user.first_name, chatroom_path(friend.chatroom) %>
 <% end %>
   </div>
-
-
-
-
-
 </div>
+
+<%= render "map" %>
