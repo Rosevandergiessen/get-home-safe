@@ -10,6 +10,5 @@ export default class extends Controller {
 
   show() {
     this.mapTarget.classList.toggle("d-none")
-    this.mapTarget.resize()
   }
 }
