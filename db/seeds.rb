@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Creating users..."
-User.create(first_name:"Albert", last_name:"Camus", email:"albert@gmail.com", password:"123456",phone_number:"828282", address:"Prinsengracht, 1015EB Amsterdam", image_url:"https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg")
+User.create(first_name:"Albert", last_name:"Camus", email:"albert@gmail.com", password:"123456",phone_number:"828282", address:"Prinsengracht Amsterdam", image_url:"https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg")
