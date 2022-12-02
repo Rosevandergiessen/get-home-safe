@@ -6,9 +6,9 @@
         <% else %>
         <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle img" %>
       <% end %>
-
+  <div>
     <%= link_to "Edit my profile", edit_user_registration_path, class:"profile-link button-green-shadow"%>
-
+  </div>
     <div class="small-details-profile">
       <p>FIRST <span style="color: #6C27FF"><%= current_user.first_name.upcase%></span> LAST <span style="color: #6C27FF"><%= current_user.last_name.upcase%></span></p>
       <p>EMAIL <span style="color: #6C27FF"><%= current_user.email.upcase%></span></p>
