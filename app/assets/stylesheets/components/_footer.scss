@@ -1,5 +1,5 @@
 .footer {
-  background: $off-white;
+  background: $light-gray;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,12 +14,16 @@
   justify-content: space-between;
   width: 100vw;
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 19px;
 }
 .footer-links a {
   color: $dark-gray;
   text-decoration: none;
   font-size: 1.5rem;
   padding: 0 1rem;
+  font-size: 30px;
 }
 
 .footer p {

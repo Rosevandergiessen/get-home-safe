@@ -1,14 +1,26 @@
-<h3>MY FRIENDS</h3>
 <div class="container">
-<%= link_to "ADD A FRIEND", find_friends_path %>
-<% @friends.each do |friend| %>
-<div class="card-product">
-<% if friend.user.id == current_user.id %>
-<% friend = Friend.find(friend.friend_id).user %>
-<%= link_to friend.first_name, profile_path(friend.id), class:"text" %>
-<% else %>
-<%= link_to friend.user.first_name, profile_path(friend.user.id), class:"text"  %>
-<% end %>
-</div>
-<% end %>
+<h3 class="pb-2">MY FRIENDS</h3>
+      <% @friends.each do |friend| %>
+<div class="cards">
+  <div class="card-product">
+    <% if friend.user.id == current_user.id %>
+      <% friend = Friend.find(friend.friend_id).user %>
+
+      <% if friend.photo.attached? %>
+        <%= cl_image_tag friend.photo.key, class: "card-img"%>
+        <% else %>
+        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "card-img" %>
+      <% end %>
+
+        <%= link_to friend.first_name.upcase, profile_path(friend.id), class:"text" %>
+    <% else %>
+      <%= link_to friend.user.first_name.upcase, profile_path(friend.user.id), class:"text" %>
+    <% end %>
+  </div>
+  </div>
+  <% end %>
+
+  <div class="add d-flex justify-content-left">
+  <%= link_to "ADD A FRIEND", find_friends_path, class: "button-green-shadow" %>
+  </div>
 </div>

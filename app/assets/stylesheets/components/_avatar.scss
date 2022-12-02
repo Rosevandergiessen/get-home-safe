@@ -4,16 +4,48 @@
   border: rgb(0, 0, 0) 1px solid;
   margin: 5px;
 }
-.avatar-large {
+
+.avatar-nav {
+  border-radius: 50%;
+  margin: 5px;
+  width: 55px;
+  height: 55px;
+  border: 1px solid $purple;
+  object-fit: cover;
+}
+
+.rounded-circle {
   width: 250px;
   border-radius: 50%;
-  border: rgb(0, 0, 0) 1px solid;
-  transition: border 300ms;
+  border: #E5CCE8 8px solid;
+  opacity: 0.4;
 }
 
 .avatar-active {
   width: 250px;
-  border: greenyellow 30px solid;
+  opacity: 1.0;
+  border: #00D9B2 8px solid;
+  transition: opacity 0.5s linear 0.5s, border 1000ms;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 #00D9B2;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 30px rgba(56, 229, 77, 0.0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(56, 229, 77, 0.0);
+	}
 }
 
 .avatar-bordered {

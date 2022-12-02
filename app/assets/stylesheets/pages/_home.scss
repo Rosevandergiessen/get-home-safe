@@ -1,15 +1,45 @@
 // Specific CSS for your home-page
 .center {
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .flex-container {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
+.username {
+  text-align: center;
+  font-size: 15px;
+}
 
+.intro {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  color: $green;
+}
+
+.image {
+  width: 80px;
+  margin: 0px 10px;
+  border: 1px solid black;
+  opacity: 1;
+}
+
+.picture {
+  margin-top: 20px;
+  width: 280px;
+  height: 275px;
+  object-fit: cover;
+}

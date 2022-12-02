@@ -11,3 +11,20 @@
 .navbar-lewagon .navbar-brand img {
   width: 35px;
 }
+
+.header {
+  text-decoration: none;
+  color: #6C27FF;
+}
+
+.text {
+  display: flex;
+
+  p {
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 15px;
+    font-size: 15px;
+    color: $purple;
+  }
+}

@@ -1,28 +1,39 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://i.ibb.co/n8Kz1Dc/895-BA2-DC-76-FD-4648-9711-8-A2-F9-E813-DDA.png" %>
+    <%= link_to root_path, class: "navbar-brand text" do %>
+      <img src="https://i.ibb.co/n8Kz1Dc/895-BA2-DC-76-FD-4648-9711-8-A2-F9-E813-DDA.png" alt="">
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+
+
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> %>
+
+
+
+    <div class="" id="navbarSupportedContent">
+      <div class="me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.first_name %></a>
+          <div class="nav-item dropdown">
+            <a class="nav-link" href="#" data-bs-toggle="dropdown">
+
+            <%= image_tag "logo-ghs.png", :style => "width:80px" %>
+            </a>
+
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+              <%= link_to "My profile", my_profile_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"%>
               </div>
-          </li>
+          </div>
         <% else %>
-          <li class="nav-item">
+          <div class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+          </div>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
 </div>
