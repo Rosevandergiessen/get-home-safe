@@ -28,3 +28,11 @@
     color: $purple;
   }
 }
+
+.profilepic {
+  width: 55px;
+  height: 55px;
+  border: none;
+  opacity: 1;
+  object-fit: cover;
+}
