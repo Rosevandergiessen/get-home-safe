@@ -4,8 +4,8 @@ class PagesController < ApplicationController
   def home
     @markers = [
       {
-        lat: current_user.latitude,
-        lng: current_user.longitude
+        lat: 52.377956,
+        lng: 4.897070
       }
     ]
   end

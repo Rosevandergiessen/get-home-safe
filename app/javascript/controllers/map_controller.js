@@ -21,7 +21,6 @@ export default class extends Controller {
         setTimeout(() => {
           timeInterval()
         }, 3000);
-
     }
 
     timeInterval()
