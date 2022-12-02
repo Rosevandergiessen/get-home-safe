@@ -4,6 +4,16 @@
   border: rgb(0, 0, 0) 1px solid;
   margin: 5px;
 }
+
+.avatar-nav {
+  border-radius: 50%;
+  margin: 5px;
+  width: 55px;
+  height: 55px;
+  border: 1px solid $purple;
+  object-fit: cover;
+}
+
 .rounded-circle {
   width: 250px;
   border-radius: 50%;

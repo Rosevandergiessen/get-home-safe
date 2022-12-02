@@ -1,10 +1,10 @@
 <div class="center" data-controller="activation-button">
-    <div class="username">
-      <%= current_user.first_name.upcase%>
+    <div class="intro">
+      <p>WALKING HOME WITH YOU</p>
     </div>
   <div class="main-avatar">
     <div class="activate" data-action="click->activation-button#change">
-    
+
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "picture rounded-circle", data: { activation_button_target: "image" }%>
         <% else %>
@@ -15,8 +15,13 @@
     </div>
   </div>
 
+
+
   <div class="friend-avatar flex-container">
     <div>
+    <div class="text-info font-weight-bold username">
+      <p>KEEP IN TOUCH</p>
+    </div>
     <% current_user.friends.each do |friend| %>
     <%= link_to chatroom_path(friend.user_friends.find_by(user_id: current_user).chatroom) do%>
     <% if friend.user.photo.attached? %>
