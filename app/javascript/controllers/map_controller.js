@@ -15,8 +15,16 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+    const timeInterval = () => {
+        this.#addMarkersToMap()
+        this.#fitMapToMarkers();
+        setTimeout(() => {
+          timeInterval()
+        }, 3000);
+
+    }
+
+    timeInterval()
   }
 
   #addMarkersToMap() {
