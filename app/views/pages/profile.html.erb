@@ -10,7 +10,7 @@
       </div>
 
     <div class="p-3">
-    <% user_friend = Friend.find_by(user_id: @user.id).user_friends.find_by(user_id: current_user.id) %>
+      <% user_friend = Friend.find_by(user_id: @user.id).user_friends.find_by(user_id: current_user.id) %>
           <% if user_friend %>
             <%= link_to "Message", chatroom_path(user_friend.chatroom), class: "button-green-shadow" %>
             <% else %>
@@ -18,7 +18,7 @@
       <% end %>
     </div>
 
-    <div class="small-details">
+    <div class="">
       <p>EMAIL <span style="color: #6C27FF"><%= @user.email.upcase%></span></p>
       <p>PHONE NUMBER <span style="color: #6C27FF"><%= @user.phone_number %></span></p>
       <p>HOME ADDRESS <span style="color: #6C27FF"><%= @user.address %></span></p>
