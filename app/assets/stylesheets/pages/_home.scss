@@ -20,13 +20,18 @@
 
 .username {
   text-align: center;
-  font-size: 25px;
-  font-weight: 400;
-  color: black;
+  font-size: 15px;
+}
+
+.intro {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  color: $green;
 }
 
 .image {
-  width: 60px;
+  width: 80px;
   margin: 0px 10px;
   border: 1px solid black;
   opacity: 1;
@@ -34,7 +39,7 @@
 
 .picture {
   margin-top: 20px;
-  width: 260px;
-  height: 265px;
+  width: 280px;
+  height: 275px;
   object-fit: cover;
 }
