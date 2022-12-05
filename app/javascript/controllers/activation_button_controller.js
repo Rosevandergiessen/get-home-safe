@@ -12,13 +12,8 @@ export default class extends Controller {
       { channel: "LocationChannel" },
       { received: (data) => {
         const myMap = document.querySelector("#my-map")
-        // const myMap = document.querySelector("#my-map")
         const coords = (data.trim().split(" "))
         myMap.dataset.mapMarkersValue = `[{"lat":${coords[0]},"lng":${coords[1]}}]`
-
-        // myMap.setAttribute.dataMapMarkersValue = `[{"lat":${coords[0]},"lng":${coords[1]}}]`
-        // console.log(myMap)
-        // map.dataset.mapMarkersValue = `[{"lat":${data[0]},"lng":${data[1]}}]`
       }
     })
   }
@@ -46,7 +41,6 @@ export default class extends Controller {
       console.log(`Longitude: ${crd.longitude}`);
       console.log(`More or less ${crd.accuracy} meters.`);
 
-      // myMap.contentWindow.location.reload(true);
     }
 
     function error(err) {
