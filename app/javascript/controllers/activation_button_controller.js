@@ -24,7 +24,18 @@ export default class extends Controller {
   }
 
   change() {
+    if(this.imageTarget.classList.contains('avatar-active')) {
+      fetch('http://localhost:3000/deactivate')
+      .then(response => response)
+      .then(data => console.log(data))
+    } else {
+      fetch('http://localhost:3000/activate')
+      .then(response => response)
+      .then(data => console.log(data))
+    }
+
     this.imageTarget.classList.toggle("avatar-active")
+
 
     const options = {
       enableHighAccuracy: true,
