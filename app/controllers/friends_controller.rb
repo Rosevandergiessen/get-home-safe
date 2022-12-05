@@ -29,7 +29,5 @@ class FriendsController < ApplicationController
     @friends += UserFriend.where(friend: friend)
   end
 
- 
-
 
 end

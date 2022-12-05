@@ -18,7 +18,7 @@
 
   <div class="friend-avatar flex-container">
     <div>
-    <div class="text-info font-weight-bold username">
+    <div class="text-black font-weight-bold username">
       <p>KEEP IN TOUCH</p>
     </div>
     <% current_user.friends.each do |friend| %>
@@ -41,12 +41,14 @@
   </div>
 </div>
 
-<div data-controller="modal" style="width: 100vw;">
+<div data-controller="modal" style="width: 100vw">
   <div class="icon-link icon-modal w-25 m-auto text-center"  data-action="click->modal#show" data-modal-target="icon">
     <i class="fa-regular fa-map m-auto"></i>
   </div>
 
+
   <%# <div class="d-none" data-modal-target="map"> %>
     <%= render "map" %>
   <%# </div> %>
+
 </div>
