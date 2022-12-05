@@ -36,3 +36,10 @@
       color: $green;
     }
 }
+
+#help-button {
+  color: $off-white;
+  &:hover {
+    color: $purple;
+  }
+}
