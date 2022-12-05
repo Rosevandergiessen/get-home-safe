@@ -15,11 +15,12 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
+    this.#addMarkersToMap()
 
     const timeInterval = () => {
         this.map.resize()
-        this.#addMarkersToMap()
-        this.#fitMapToMarkers(); // needs to be fixed 
+        this.#addMarkersToMapCustom()
+        // this.#fitMapToMarkers();
         setTimeout(() => {
           timeInterval()
         }, 100);
@@ -30,8 +31,19 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
+
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.backgroundRepeat = "no-repeat"
+      customMarker.style.width = "30px"
+      customMarker.style.height = "30px"
+
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(this.map)
     })
   }
@@ -42,4 +54,12 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
+  #addMarkersToMapCustom() {
+    // this.markersValue.forEach((marker) => {
+
+      new mapboxgl.Marker()
+        .setLngLat([ this.markersValue[this.markersValue.length - 1].lng, this.markersValue[this.markersValue.length - 1].lat ])
+        .addTo(this.map)
+    // })
+  }
 }
