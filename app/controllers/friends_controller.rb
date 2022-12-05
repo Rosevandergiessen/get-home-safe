@@ -25,8 +25,8 @@ class FriendsController < ApplicationController
   def index
     @friends = []
     @friends += UserFriend.where(user: current_user)
-    friend = Friend.where(user_id: current_user.id).first
-    @friends += UserFriend.where(friend: friend)
+    # friend = Friend.where(user_id: current_user.id).first
+    # @friends += UserFriend.where(friend: friend)
   end
 
 

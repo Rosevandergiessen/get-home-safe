@@ -12,6 +12,13 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
+
+  end
+
+  def unfriend
+    @user_friend = UserFriend.find(params[:id])
+    @user_friend.destroy
+    redirect_to friends_path
   end
 
   def map
@@ -31,6 +38,6 @@ class PagesController < ApplicationController
     head :ok
   end
 
-  
+
 
 end

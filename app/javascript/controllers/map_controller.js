@@ -15,12 +15,14 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
+
     const timeInterval = () => {
+        this.map.resize()
         this.#addMarkersToMap()
-        this.#fitMapToMarkers();
+        this.#fitMapToMarkers(); // needs to be fixed 
         setTimeout(() => {
           timeInterval()
-        }, 3000);
+        }, 100);
     }
 
     timeInterval()
