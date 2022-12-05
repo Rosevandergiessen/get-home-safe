@@ -24,6 +24,8 @@
       <p>HOME ADDRESS <span style="color: #6C27FF"><%= @user.address %></span></p>
     </div>
 
-    
+    <% user_friend = UserFriend.find_by(user_id: current_user.id, friend_id: Friend.find_by(user_id: @user.id).id) %>
+    <%= link_to "Remove friend", unfriend_path(id: user_friend.id), data: {turbo_confirm: "Are you sure?"} %>
+
   </div>
 </div>
