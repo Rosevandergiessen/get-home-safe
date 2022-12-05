@@ -1,3 +1,4 @@
+
 <div class="center" data-controller="activation-button">
     <div class="intro">
       <p>WALKING HOME WITH YOU</p>
@@ -5,11 +6,23 @@
   <div class="main-avatar">
     <div class="activate" data-action="click->activation-button#change">
 
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class: "picture rounded-circle", data: { activation_button_target: "image" }%>
+      <% if session[:status] %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "picture rounded-circle avatar-active", data: { activation_button_target: "image" }%>
         <% else %>
-        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "picture rounded-circle", data: { activation_button_target: "image" } %>
+          <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "picture rounded-circle avatar-active", data: { activation_button_target: "image" } %>
+        <% end %>
+
+      <% else %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "picture rounded-circle", data: { activation_button_target: "image" }%>
+        <% else %>
+          <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "picture rounded-circle", data: { activation_button_target: "image" } %>
+        <% end %>
+
       <% end %>
+
+
     </div>
 
     </div>
@@ -46,9 +59,11 @@
     <i class="fa-regular fa-map m-auto"></i>
   </div>
 
-
   <%# <div class="d-none" data-modal-target="map"> %>
-    <%= render "map" %>
+
+   <%= render "map" %>
+
+
   <%# </div> %>
 
 </div>

@@ -53,3 +53,22 @@
   font-size: 3rem;
 }
 
+
+#my-map {
+  .mapboxgl-canvas {
+    // width: 100vw !important;
+    // height: 90vh !important;
+    padding-bottom: 90px !important;
+    // object-fit: cover;
+  }
+}
+
+.mapboxgl-canvas-container {
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.words {
+  border: 1px solid black;
+}

@@ -23,6 +23,7 @@ class PagesController < ApplicationController
       }
     end
 
+
     @areas = Location.where(category: "Busy area")
     @markers += @areas.geocoded.map do |area|
       {
@@ -58,7 +59,6 @@ class PagesController < ApplicationController
       }
     ]
 
-
     def profile
       @user = User.find(params[:id])
     end
@@ -78,6 +78,24 @@ class PagesController < ApplicationController
         render_to_string(partial: "pages/cords", locals: { lng: params[:lng], lat: params[:lat] })
       )
       head :ok
+    end
+
+    def profile
+      @user = User.find(params[:id])
+    end
+
+    def activate
+      session[:status] = true
+    end
+
+    def deactivate
+      session[:status] = false
+    end
+
+    def unfriend
+      @user_friend = UserFriend.find(params[:id])
+      @user_friend.destroy
+      redirect_to friends_path
     end
   end
 end

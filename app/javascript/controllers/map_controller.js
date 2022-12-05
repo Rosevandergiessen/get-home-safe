@@ -18,12 +18,12 @@ export default class extends Controller {
     this.#addMarkersToMap()
 
     const timeInterval = () => {
-      console.log("sadfasdf")
+        this.map.resize()
         this.#addMarkersToMapCustom()
         // this.#fitMapToMarkers();
         setTimeout(() => {
           timeInterval()
-        }, 3000);
+        }, 100);
     }
 
     timeInterval()
