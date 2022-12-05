@@ -15,6 +15,14 @@ class PagesController < ApplicationController
 
   end
 
+  def activate
+    session[:status] = true
+  end
+
+  def deactivate
+    session[:status] = false
+  end
+
   def unfriend
     @user_friend = UserFriend.find(params[:id])
     @user_friend.destroy

@@ -2,6 +2,7 @@
 <h3 class="pt-3">FRIENDS</h3>
 <div class="middle">
 <p>Search for a contact by phone number</p>
+<p class="text-info">Never add a contact you don't know or trust</p>
 <%= form_with url: find_friends_path, method: :get, class: "d-flex pb-3" do %>
   <%= text_field_tag :query,
     params[:query],
@@ -11,14 +12,19 @@
   <%= submit_tag "Search", class: "btn btn-primary send" %>
 <% end %>
 
-
 <div class="users">
 <% @users.each do |user| %>
   <div class="names">
-  
+
   <%= link_to user.first_name.upcase, friends_path(user: user.id), data: { turbo_method: :post } %>
   </div>
 <% end %>
 </div>
 </div>
+
+  <div class="add d-flex justify-content-left">
+  <div><p>Can't find who you want?</p>
+  <p class="button-green-shadow">INVITE A FRIEND</p>
+  </div>
+  </div>
 </div>
