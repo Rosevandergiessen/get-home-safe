@@ -17,13 +17,9 @@
       <div class="me-auto">
         <% if user_signed_in? %>
           <div class="nav-item dropdown">
-            <a class="nav-link" href="#" data-bs-toggle="dropdown">
+            <a class="nav-link text-danger" href="#" data-bs-toggle="dropdown">
 
-             <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, class: "rounded-circle profilepic", data: { activation_button_target: "image" }%>
-        <% else %>
-        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle profilepic", data: { activation_button_target: "image" } %>
-      <% end %>
+             <%= current_user.first_name.upcase%>
             </a>
 
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

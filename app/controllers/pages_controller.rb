@@ -31,6 +31,6 @@ class PagesController < ApplicationController
     head :ok
   end
 
-  def my_profile
-  end
+  
+
 end

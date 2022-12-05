@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :friends, only: %i[create index show destroy] do
-    resources :user_friends, only: %i[create]
+    resources :user_friends, only: %i[create destroy]
   end
 
   resources :helplines, only: %i[show]
