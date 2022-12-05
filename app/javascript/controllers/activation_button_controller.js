@@ -34,6 +34,18 @@ export default class extends Controller {
       .then(data => console.log(data))
     }
 
+    //for production
+    // change() {
+    //   if(this.imageTarget.classList.contains('avatar-active')) {
+    //     fetch('https://teamgethomesafe.herokuapp.com/deactivate')
+    //     .then(response => response)
+    //     .then(data => console.log(data))
+    //   } else {
+    //     fetch('https://teamgethomesafe.herokuapp.com/activate')
+    //     .then(response => response)
+    //     .then(data => console.log(data))
+    //   }
+
     this.imageTarget.classList.toggle("avatar-active")
 
 
@@ -51,6 +63,11 @@ export default class extends Controller {
       .then(response => response.text())
       .then((data) => {
         console.log(data)
+        // for production
+        //   fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+        // .then(response => response.text())
+        // .then((data) => {
+        //   console.log(data)
       })
 
       console.log('Your current position is:');
