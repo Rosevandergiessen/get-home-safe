@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   get 'profile/:id', to: 'pages#profile', as: 'profile'
   get 'send_location', to: 'pages#send_location'
   get 'my_profile', to: 'pages#my_profile', as: 'my_profile'
-  get '/voice' => 'twilio#voice'
+  get 'voice' => 'twilio#voice'
 end

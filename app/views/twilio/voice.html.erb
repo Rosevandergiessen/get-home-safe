@@ -1,1 +1,22 @@
-<h2><%= @voice %></h2>
+
+<H1>YOU JUST PRESSED THE HELP BUTTON</H1>
+<H2>YOUR FRIENDS HAVE BEEN NOTIFIED</H2>
+<H2>WHEN IN DOUBT CALL 112</H2>
+
+  <div class="friend-avatar flex-container">
+    <div>
+    <div class="text-black font-weight-bold username">
+      <p>CHAT WITH A FRIEND</p>
+    </div>
+    <% current_user.friends.each do |friend| %>
+    <%= link_to chatroom_path(friend.user_friends.find_by(user_id: current_user).chatroom) do%>
+    <% if friend.user.photo.attached? %>
+        <%= cl_image_tag friend.user.photo.key, class: "rounded-circle image mb-3"%>
+        <% else %>
+        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle image mb-3" %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+<h2><%#= @voice %></h2>
+
