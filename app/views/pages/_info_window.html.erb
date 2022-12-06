@@ -1,3 +1,14 @@
-<h2><%= location.name %></h2>
-<p><%= location.description %></p>
-<p><%= location.address %></p>
+<% if location.class.name == "Location"%>
+  <h2><%= location.name %></h2>
+  <p><%= location.description %></p>
+  <p><%= location.address %></p>
+<% else %>
+        <% if location.photo.attached? %>
+          <%= cl_image_tag location.photo.key, class:"card-img"%>
+        <% else %>
+          <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class:"user-img-map"%>
+        <% end %>
+  <h2><%= location.first_name %></h2>
+  <p><%= location.address %></p>
+<% end %>
+

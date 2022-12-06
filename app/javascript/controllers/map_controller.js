@@ -29,7 +29,7 @@ export default class extends Controller {
         // this.#fitMapToMarkers();
         setTimeout(() => {
           timeInterval()
-        }, 100);
+        }, 500);
     }
 
     timeInterval()
@@ -46,6 +46,7 @@ export default class extends Controller {
       customMarker.style.height = "30px"
 
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      // const popupUser = new mapboxgl.Popup().setHTML(marker.info_window_user)
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
@@ -53,7 +54,7 @@ export default class extends Controller {
         .getElement().addEventListener('click', () => {
           this.map.flyTo(
             {center:[marker.lng, marker.lat],
-              zoom: 15g
+              zoom: 13
             }
             );;
         });
