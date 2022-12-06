@@ -53,7 +53,7 @@ export default class extends Controller {
         .getElement().addEventListener('click', () => {
           this.map.flyTo(
             {center:[marker.lng, marker.lat],
-              zoom: 15g
+              zoom: 15
             }
             );;
         });
