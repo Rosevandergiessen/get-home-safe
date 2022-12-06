@@ -50,6 +50,13 @@ export default class extends Controller {
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)
+        .getElement().addEventListener('click', () => {
+          this.map.flyTo(
+            {center:[marker.lng, marker.lat],
+              zoom: 15g
+            }
+            );;
+        });
     })
   }
 
