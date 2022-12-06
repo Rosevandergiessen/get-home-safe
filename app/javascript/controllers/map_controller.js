@@ -10,9 +10,15 @@ export default class extends Controller {
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
 
+    const bounds = [
+      [4.818024, 52.336513],
+      [4.949514, 52.374759]
+      ];
+
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v10",
+      bounds: bounds
     })
 
     this.#addMarkersToMap()
@@ -31,7 +37,6 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-
       const customMarker = document.createElement("div")
       customMarker.className = "marker"
       customMarker.style.backgroundImage = `url('${marker.image_url}')`
@@ -56,7 +61,6 @@ export default class extends Controller {
 
   #addMarkersToMapCustom() {
     // this.markersValue.forEach((marker) => {
-
       new mapboxgl.Marker()
         .setLngLat([ this.markersValue[this.markersValue.length - 1].lng, this.markersValue[this.markersValue.length - 1].lat ])
         .addTo(this.map)
