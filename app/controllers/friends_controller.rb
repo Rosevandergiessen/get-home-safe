@@ -10,16 +10,18 @@ class FriendsController < ApplicationController
 
   def create
 
-    @friend = Friend.new(user_id: params[:user])
-    @friend.save
+    @friend = Friend.find_by(user_id: params[:user])
+    @friend = Friend.create(user_id: params[:user]) unless @friend
+    # @friend.save
 
     @chatroom = Chatroom.create
 
     @user_friend = UserFriend.new(user_id: current_user.id, friend_id: @friend.id, chatroom_id: @chatroom.id)
-    @user_friend.save!
-
-    redirect_to friends_path
-
+    if @user_friend.save
+      redirect_to friends_path
+    else
+      raise
+    end
   end
 
   def index
