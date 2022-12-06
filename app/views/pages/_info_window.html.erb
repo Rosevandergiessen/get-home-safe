@@ -1,14 +1,23 @@
-<% if location.class.name == "Location"%>
-  <h2><%= location.name %></h2>
-  <p><%= location.description %></p>
-  <p><%= location.address %></p>
+<% if marker.class.name == "Location"%>
+  <h2><%= marker.name %></h2>
+  <p><%= marker.description %></p>
+  <p><%= marker.address %></p>
 <% else %>
-        <% if location.photo.attached? %>
-          <%= cl_image_tag location.photo.key, class:"card-img"%>
-        <% else %>
+          <% if marker.photo.attached? %>
+          <%= cl_image_tag marker.photo.key, class:"user-img-map"%>
+          <% else %>
           <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class:"user-img-map"%>
-        <% end %>
-  <h2><%= location.first_name %></h2>
-  <p><%= location.address %></p>
+          <% end %>
+    <h2><%= marker.first_name %></h2>
+    <p><%= marker.address %></p>
+          <% if marker == current_user %>
+          <p id="house">This is your own house</p>
+          <% else %>
+          <% user_friend = Friend.find_by(user_id: marker.id).user_friends.find_by(user_id: current_user.id) %>
+          <% if user_friend %>
+            <%= link_to "Message", chatroom_path(user_friend.chatroom), class: "button-green-shadow" %>
+            <% else %>
+            Profile
+          <% end %>
+          <% end %>
 <% end %>
-

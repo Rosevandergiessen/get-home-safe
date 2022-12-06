@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       {
         lat: location.latitude,
         lng: location.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { location: }),
+        info_window: render_to_string(partial: "info_window", locals: { marker: location }),
         image_url: helpers.asset_url("police_icon.png")
       }
     end
@@ -18,7 +18,7 @@ class PagesController < ApplicationController
       {
         lat: hospital.latitude,
         lng: hospital.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { location: hospital }),
+        info_window: render_to_string(partial: "info_window", locals: { marker: hospital }),
         image_url: helpers.asset_url("hospital_marker.png")
       }
     end
@@ -29,7 +29,7 @@ class PagesController < ApplicationController
       {
         lat: area.latitude,
         lng: area.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { location: area }),
+        info_window: render_to_string(partial: "info_window", locals: { marker: area }),
         image_url: helpers.asset_url("busy_area.png")
       }
     end
@@ -40,7 +40,7 @@ class PagesController < ApplicationController
       {
         lat: f.latitude,
         lng: f.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { location: f }),
+        info_window: render_to_string(partial: "info_window", locals: { marker: f }),
         image_url: helpers.asset_url("friend_house.png")
       }
     end
@@ -49,7 +49,7 @@ class PagesController < ApplicationController
       {
         lat: current_user.latitude,
         lng: current_user.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { location: current_user }),
+        info_window: render_to_string(partial: "info_window", locals: { marker: current_user }),
         image_url: helpers.asset_url("home_marker")
       }
     ]
