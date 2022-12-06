@@ -147,9 +147,10 @@ class PagesController < ApplicationController
     session[:status] = false
   end
 
+
   def unfriend
     @user_friend = UserFriend.find(params[:id])
     @user_friend.destroy
-    redirect_to friends_path
+    redirect_to friends_path, status: :see_other
   end
 end
