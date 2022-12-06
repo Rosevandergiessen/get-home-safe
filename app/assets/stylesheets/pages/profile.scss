@@ -34,8 +34,13 @@
   border: 2px solid #E5CCE8;
 }
 
-.delete a {
+
+.remove a{
+  text-decoration: none;
+  color: black;
+
+
   &:hover {
-    color: $purple;
+    color: $lilac;
   }
 }
