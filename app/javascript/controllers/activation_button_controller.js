@@ -32,11 +32,13 @@ export default class extends Controller {
     // for production
     change() {
       if(this.imageTarget.classList.contains('avatar-active')) {
-        fetch('https://teamgethomesafe.herokuapp.com/deactivate')
+        // fetch('https://teamgethomesafe.herokuapp.com/deactivate')
+        fetch(`http://localhost:3000/deactivate`)
         .then(response => response)
         .then(data => console.log(data))
       } else {
-        fetch('https://teamgethomesafe.herokuapp.com/activate')
+        // fetch('https://teamgethomesafe.herokuapp.com/activate')
+        fetch(`http://localhost:3000/activate`)
         .then(response => response)
         .then(data => console.log(data))
       }
@@ -54,12 +56,9 @@ export default class extends Controller {
     function success(pos) {
       const crd = pos.coords;
 
-      // fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
-      // .then(response => response.text())
-      // .then((data) => {
-      //   console.log(data)
         // for production
-        fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+        // fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+        fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
         .then(response => response.text())
         .then((data) => {
           console.log(data)
@@ -76,7 +75,9 @@ export default class extends Controller {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-    navigator.geolocation.getCurrentPosition(success, error, options);
+    // const danko = () => {
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    // }
 
   }
 }

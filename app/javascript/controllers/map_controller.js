@@ -46,7 +46,6 @@ export default class extends Controller {
       customMarker.style.height = "30px"
 
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      // const popupUser = new mapboxgl.Popup().setHTML(marker.info_window_user)
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
