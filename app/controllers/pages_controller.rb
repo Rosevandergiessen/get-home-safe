@@ -58,44 +58,44 @@ class PagesController < ApplicationController
         lng: 0
       }
     ]
+  end
 
-    def profile
-      @user = User.find(params[:id])
-    end
+  def profile
+    @user = User.find(params[:id])
+  end
 
-    def map
-      @markers = [
-        {
-          lat: current_user.latitude,
-          lng: current_user.longitude
-        }
-      ]
-    end
+  def map
+    @markers = [
+      {
+        lat: current_user.latitude,
+        lng: current_user.longitude
+      }
+    ]
+  end
 
-    def send_location
-      LocationChannel.broadcast_to(
-        "GHS",
-        render_to_string(partial: "pages/cords", locals: { lng: params[:lng], lat: params[:lat] })
-      )
-      head :ok
-    end
+  def send_location
+    LocationChannel.broadcast_to(
+      "GHS",
+      render_to_string(partial: "pages/cords", locals: { lng: params[:lng], lat: params[:lat] })
+    )
+    head :ok
+  end
 
-    def profile
-      @user = User.find(params[:id])
-    end
+  # def profile
+  #   @user = User.find(params[:id])
+  # end
 
-    def activate
-      session[:status] = true
-    end
+  def activate
+    session[:status] = true
+  end
 
-    def deactivate
-      session[:status] = false
-    end
+  def deactivate
+    session[:status] = false
+  end
 
-    def unfriend
-      @user_friend = UserFriend.find(params[:id])
-      @user_friend.destroy
-      redirect_to friends_path
-    end
+  def unfriend
+    @user_friend = UserFriend.find(params[:id])
+    @user_friend.destroy
+    redirect_to friends_path
   end
 end
