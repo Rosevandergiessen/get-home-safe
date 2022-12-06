@@ -1,12 +1,13 @@
 <div class="footer">
   <div class="footer-links">
     <div class="icon-link">
-    <a href=<%= friends_path %> class="icon-link"><i class="fa-regular fa-address-book"></i></a>
-
+      <a href=<%= friends_path %> class="icon-link"><i class="fa-regular fa-address-book"></i></a>
     </div>
-    <a href="#" id="help-button" class="button-purple">HELP</a>
+    <div data-controller="help-button">
+      <button type="button" class="btn btn-danger button-purple" data-action="click->help-button#help">HELP</button>
+    </div>
     <div class="icon-link">
-    <a href="/map" class="icon-link"><i class="fa-regular fa-map"></i></a>
+      <a href="/map" class="icon-link"><i class="fa-regular fa-map"></i></a>
     </div>
   </div>
 </div>

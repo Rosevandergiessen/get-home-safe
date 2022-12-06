@@ -13,6 +13,9 @@ application.register("chatroom-subscription", ChatroomSubscriptionController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import HelpButtonController from "./help_button_controller"
+application.register("help-button", HelpButtonController)
+
 import MapController from "./map_controller"
 application.register("map", MapController)
 
