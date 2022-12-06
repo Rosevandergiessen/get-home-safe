@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :helplines, only: %i[show]
 
+
   get 'activate', to: 'pages#activate'
   get 'deactivate', to: 'pages#deactivate'
   get 'unfriend', to: 'pages#unfriend'
