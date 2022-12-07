@@ -18,8 +18,8 @@ const refreshLoc = () => {
         const crd = pos.coords;
 
           // for production
-          // fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
-          fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+          fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+          // fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
           .then(response => response.text())
           .then((data) => {
             console.log(data)
