@@ -20,7 +20,7 @@ class FriendsController < ApplicationController
     if @user_friend.save
       redirect_to friends_path
     else
-      render "shared/error_messages"
+      render "public/404.html"
     end
   end
 

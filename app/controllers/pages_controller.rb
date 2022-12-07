@@ -147,7 +147,6 @@ class PagesController < ApplicationController
     session[:status] = false
   end
 
-
   def unfriend
     @user_friend = UserFriend.find(params[:id])
     @user_friend.destroy
