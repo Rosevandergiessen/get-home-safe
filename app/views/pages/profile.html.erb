@@ -1,20 +1,20 @@
 <div class="container">
   <div class="details">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, class: "rounded-circle img"%>
-        <% else %>
-        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle img" %>
-      <% end %>
-      <div class="name text-danger">
-        <%= @user.first_name.upcase %> <%= @user.last_name.upcase %>
-      </div>
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, class: "rounded-circle img"%>
+      <% else %>
+      <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "rounded-circle img" %>
+    <% end %>
+    <div class="name text-danger">
+      <%= @user.first_name.upcase %> <%= @user.last_name.upcase %>
+    </div>
 
     <div class="p-3">
       <% user_friend = Friend.find_by(user_id: @user.id).user_friends.find_by(user_id: current_user.id) %>
-          <% if user_friend %>
-            <%= link_to "Message", chatroom_path(user_friend.chatroom), class: "button-green-shadow" %>
-            <% else %>
-            Profile
+      <% if user_friend %>
+        <%= link_to "Message", chatroom_path(user_friend.chatroom), class: "button-green-shadow" %>
+      <% else %>
+        Profile
       <% end %>
     </div>
 
@@ -26,7 +26,9 @@
 
     <% user_friend = UserFriend.find_by(user_id: current_user.id, friend_id: Friend.find_by(user_id: @user.id).id) %>
     <div class="remove">
-   <i class="fa-solid fa-trash"></i> <%= link_to "Remove friend", unfriend_path(id: user_friend.id), data: {turbo_confirm: "Are you sure?"} %>
-   </div>
+      <i class="fa-solid fa-trash"></i> <%= link_to "Remove friend", unfriend_path(id: user_friend.id), data: {turbo_confirm: "Are you sure?"} %>
+    </div>
   </div>
 </div>
+
+<p class="d-none my-target"><%= session[:status] %></p>

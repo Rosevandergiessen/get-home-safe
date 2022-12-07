@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-
+// import 'mapbox-gl/dist/mapbox-gl.css';
 // Connects to data-controller="map"
 export default class extends Controller {
   static values = {
@@ -46,8 +46,7 @@ export default class extends Controller {
       customMarker.style.height = "30px"
 
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      // const popupUser = new mapboxgl.Popup().setHTML(marker.info_window_user)
-      new mapboxgl.Marker(customMarker)
+      new mapboxgl.Marker(customMarker, {offset: [0, -50/2]})
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)
@@ -68,10 +67,8 @@ export default class extends Controller {
   }
 
   #addMarkersToMapCustom() {
-    // this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ this.markersValue[this.markersValue.length - 1].lng, this.markersValue[this.markersValue.length - 1].lat ])
         .addTo(this.map)
-    // })
   }
 }
