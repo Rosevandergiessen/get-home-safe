@@ -2,7 +2,7 @@
 <div style="width: 100%; height: 89vh;"
   data-controller="map"
   data-modal-target="map"
-  class="d-none"
+  <%# class="d-none" %>
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id="my-map">
 </div>
