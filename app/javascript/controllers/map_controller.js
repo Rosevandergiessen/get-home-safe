@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-
+// import 'mapbox-gl/dist/mapbox-gl.css';
 // Connects to data-controller="map"
 export default class extends Controller {
   static values = {
@@ -46,7 +46,7 @@ export default class extends Controller {
       customMarker.style.height = "30px"
 
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      new mapboxgl.Marker(customMarker)
+      new mapboxgl.Marker(customMarker, {offset: [0, -50/2]})
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)

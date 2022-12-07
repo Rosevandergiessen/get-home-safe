@@ -6,7 +6,7 @@ export default class extends Controller {
 
   connect() {
 
-    this.mapTarget.resize()
+    // this.mapTarget.resize()
 
   }
 

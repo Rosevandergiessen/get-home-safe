@@ -14,26 +14,35 @@ export default class extends Controller {
         const myMap = document.querySelector("#my-map")
         const coords = (data.trim().split(" "))
         myMap.dataset.mapMarkersValue = `[{"lat":${coords[0]},"lng":${coords[1]}}]`
+        console.log("albert")
       }
     })
   }
 
   change() {
     if(this.imageTarget.classList.contains('avatar-active')) {
-        // for production
-        // fetch('https://teamgethomesafe.herokuapp.com/deactivate')
-        fetch(`http://localhost:3000/deactivate`)
-        .then(response => response)
-        .then(data => console.log(data))
-      } else {
-        // for production
-        // fetch('https://teamgethomesafe.herokuapp.com/activate')
-        fetch(`http://localhost:3000/activate`)
-        .then(response => response)
-        .then(data => console.log(data))
-      }
+      // for production
+      // fetch('https://teamgethomesafe.herokuapp.com/deactivate')
+      fetch(`http://localhost:3000/deactivate`)
+      .then(response => response)
+      .then(data => console.log(data))
+    } else {
+      // for production
+      // fetch('https://teamgethomesafe.herokuapp.com/activate')
+      fetch(`http://localhost:3000/activate`)
+      .then(response => response)
+      .then(data => console.log(data))
+    }
 
     this.imageTarget.classList.toggle("avatar-active")
+
+    const myTarget = document.querySelector(".my-target")
+
+    if(myTarget.innerText ==  "false") {
+      myTarget.innerText = "true"
+    } else {
+      myTarget.innerText = "false"
+    }
 
     const options = {
       enableHighAccuracy: true,
