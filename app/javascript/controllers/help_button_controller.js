@@ -10,6 +10,6 @@ export default class extends Controller {
   }
 
   help() {
-    fetch('/voice').then(response => response.json).then(data => console.log("Message sent"))
+    fetch('https://teamgethomesafe.herokuapp.com/voice').then(response => response.json).then(data => console.log("Message sent"))
   }
 }
