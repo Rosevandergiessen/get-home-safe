@@ -22,14 +22,14 @@ export default class extends Controller {
   change() {
     if(this.imageTarget.classList.contains('avatar-active')) {
       // for production
-      // fetch('https://teamgethomesafe.herokuapp.com/deactivate')
-      fetch(`http://localhost:3000/deactivate`)
+      fetch('https://teamgethomesafe.herokuapp.com/deactivate')
+      // fetch(`http://localhost:3000/deactivate`)
       .then(response => response)
       .then(data => console.log(data))
     } else {
       // for production
-      // fetch('https://teamgethomesafe.herokuapp.com/activate')
-      fetch(`http://localhost:3000/activate`)
+      fetch('https://teamgethomesafe.herokuapp.com/activate')
+      // fetch(`http://localhost:3000/activate`)
       .then(response => response)
       .then(data => console.log(data))
     }
@@ -54,8 +54,8 @@ export default class extends Controller {
       const crd = pos.coords;
 
         // for production
-        // fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
-        fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+        fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+        // fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
         .then(response => response.text())
         .then((data) => {
           console.log(data)
