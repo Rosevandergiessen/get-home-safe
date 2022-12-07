@@ -1,7 +1,8 @@
 <p class="d-none my-target"><%= session[:status] %></p>
 <div class="center" data-controller="activation-button">
     <div class="intro">
-      <p><strong>WALKING HOME WITH YOU</strong></p>
+    <%= image_tag "logo-ghs.png", class: "home" %>
+      <p class="pfade"><strong>WALKING HOME WITH YOU</strong></p>
     </div>
   <div class="main-avatar">
     <div class="activate" data-action="click->activation-button#change">
