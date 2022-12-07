@@ -26,6 +26,8 @@
   font-size: 30px;
 }
 
+
+
 .footer p {
   margin: 0;
 }
@@ -39,7 +41,20 @@
 
 #help-button {
   color: $off-white;
-  &:hover {
-    color: $purple;
-  }
+}
+
+
+.helpbutton {
+font-size: 32px;
+font-weight: 300;
+padding: 10px 50px;
+background-color: $lilac;
+color: white;
+border: 2px solid red;
+border-radius: 5px;
+
+&:hover {
+  background-color: red;
+}
+
 }

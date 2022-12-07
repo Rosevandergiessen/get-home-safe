@@ -5,7 +5,7 @@ class TwilioController < ApplicationController
 
   def voice
     account_sid = "AC5ce13b91d2d5dfbbda3bc73e5db22d5a" # Your Test Account SID from www.twilio.com/console/settings
-    auth_token = "3ef3637e12cee75cedc04cd35a585de6"   # Your Test Auth Token from www.twilio.com/console/settings
+    auth_token = "a758bdb2b7f7da7d6dd40785edf85a3f"   # Your Test Auth Token from www.twilio.com/console/settings
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     current_user.friends.each do |friend|

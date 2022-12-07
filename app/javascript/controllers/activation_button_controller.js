@@ -62,7 +62,7 @@ export default class extends Controller {
     function error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
-    
+
     // const danko = () => {
       navigator.geolocation.getCurrentPosition(success, error, options);
     // }

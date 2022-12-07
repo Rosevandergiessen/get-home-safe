@@ -5,6 +5,7 @@ h1 {
 .names a {
   text-decoration: none;
   color: #00D9B2;
+  margin-top: 15px;
 }
 
 .middle {
@@ -16,7 +17,18 @@ h1 {
   width: 90%;
 
   p {
-    margin: 0;
+    margin-top: 15px;
   }
-  
+
+}
+
+.findpicture {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 13px;
+
+
 }
