@@ -3,7 +3,6 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-
 const myTarget = document.querySelector(".my-target")
 
 const refreshLoc = () => {

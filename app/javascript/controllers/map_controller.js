@@ -67,10 +67,8 @@ export default class extends Controller {
   }
 
   #addMarkersToMapCustom() {
-    // this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ this.markersValue[this.markersValue.length - 1].lng, this.markersValue[this.markersValue.length - 1].lat ])
         .addTo(this.map)
-    // })
   }
 }

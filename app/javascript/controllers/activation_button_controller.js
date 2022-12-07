@@ -18,25 +18,15 @@ export default class extends Controller {
     })
   }
 
-  // change() {
-  //   // if(this.imageTarget.classList.contains('avatar-active')) {
-  //   //   fetch('http://localhost:3000/deactivate')
-  //   //   .then(response => response)
-  //   //   .then(data => console.log(data))
-  //   // } else {
-  //   //   fetch('http://localhost:3000/activate')
-  //   //   .then(response => response)
-  //   //   .then(data => console.log(data))
-  //   // }
-
-    // for production
-    change() {
-      if(this.imageTarget.classList.contains('avatar-active')) {
+  change() {
+    if(this.imageTarget.classList.contains('avatar-active')) {
+        // for production
         // fetch('https://teamgethomesafe.herokuapp.com/deactivate')
         fetch(`http://localhost:3000/deactivate`)
         .then(response => response)
         .then(data => console.log(data))
       } else {
+        // for production
         // fetch('https://teamgethomesafe.herokuapp.com/activate')
         fetch(`http://localhost:3000/activate`)
         .then(response => response)
@@ -44,8 +34,6 @@ export default class extends Controller {
       }
 
     this.imageTarget.classList.toggle("avatar-active")
-
-
 
     const options = {
       enableHighAccuracy: true,
@@ -74,7 +62,7 @@ export default class extends Controller {
     function error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
-
+    
     // const danko = () => {
       navigator.geolocation.getCurrentPosition(success, error, options);
     // }

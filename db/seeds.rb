@@ -21,3 +21,5 @@ Location.create(name: "VU Medical Centre ER", description: "Emergency Room - ope
 Location.create(name: "OLVG Oost ER", description: "Emergency Room - open 24hr", address: "9 Oosterpark, Amsterdam", category: "Hospital")
 Location.create(name: "OLVG West ER", description: "Emergency Room - open 24hr", address: "164 Jan Tooropstraat, Amsterdam", category: "Hospital")
 Location.create(name: "Rembrandtplein", description: "Busy square with bars", address: "Rembrandtplein, Amsterdam", category: "Busy area")
+Location.create(name: "Leidseplein", description: "Busy square with bars", address: "Leidseplein, Amsterdam", category: "Busy area")
+Location.create(name: "9 Straatjes", description: "Busy area with shops and restaurants", address: "Wolvenstraat, Amsterdam", category: "Busy area")
