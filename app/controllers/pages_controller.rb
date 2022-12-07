@@ -115,7 +115,7 @@ class PagesController < ApplicationController
         lat: current_user.latitude,
         lng: current_user.longitude,
         info_window: render_to_string(partial: "info_window", locals: { marker: current_user }),
-        image_url: helpers.asset_url("home_marker")
+        image_url: helpers.asset_url("home_marker.png")
       }
     ]
 
