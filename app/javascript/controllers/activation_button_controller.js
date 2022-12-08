@@ -55,7 +55,7 @@ export default class extends Controller {
 
         // for production
         fetch(`https://teamgethomesafe.herokuapp.com/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
-        //fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
+        // fetch(`http://localhost:3000/send_location?lat=${crd.latitude}&lng=${crd.longitude}`)
         .then(response => response.text())
         .then((data) => {
           console.log(data)
@@ -72,9 +72,7 @@ export default class extends Controller {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-    // const danko = () => {
       navigator.geolocation.getCurrentPosition(success, error, options);
-    // }
 
   }
 }

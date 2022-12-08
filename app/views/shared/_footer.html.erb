@@ -1,13 +1,13 @@
 <div class="footer">
   <div class="footer-links">
     <div class="icon-link">
-      <a href=<%= friends_path %> class="icon-link"><i class="fa-solid fa-address-book"></i></a>
+      <a href=<%= friends_path %>> <%= image_tag "friends_icon.png", class: "icon-link", id: "friend-icon" %></a>
     </div>
     <div data-controller="help-button">
       <button type="button" class="helpbutton" data-action="click->help-button#help">HELP</button>
     </div>
     <div class="icon-link">
-      <a href="/map" class="icon-link"><i class="fa-solid fa-person-shelter"></i></a>
+      <a href="/map"> <%= image_tag "map_icon.png", class: "icon-link", id: "map-icon" %> </a>
     </div>
   </div>
 </div>
