@@ -4,8 +4,8 @@
 </div>
 <div class="container">
 <div class="middle">
-<p>Search for a contact by phone number</p>
-<p class="text-info pb-2">Never add a contact you don't know or trust</p>
+<h4>Search for a contact by phone number</h4>
+<p class="pb-2">Never add a contact you don't know or trust</p>
 <%= form_with url: find_friends_path, method: :get, class: "d-flex pb-3" do %>
   <%= text_field_tag :query,
     params[:query],
