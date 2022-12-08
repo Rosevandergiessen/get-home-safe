@@ -9,6 +9,8 @@ class FriendsController < ApplicationController
   end
 
   def create
+    @friend_me = Friend.find_by(user_id: current_user.id)
+    @friend_me = Friend.create(user_id: current_user.id) unless @friend_me
 
     @friend = Friend.find_by(user_id: params[:user])
     @friend = Friend.create(user_id: params[:user]) unless @friend
@@ -16,8 +18,11 @@ class FriendsController < ApplicationController
 
     @chatroom = Chatroom.create
 
+    @user_friend_me = UserFriend.new(user_id: params[:user], friend_id: @friend_me.id, chatroom_id: @chatroom.id)
+
     @user_friend = UserFriend.new(user_id: current_user.id, friend_id: @friend.id, chatroom_id: @chatroom.id)
-    if @user_friend.save
+
+    if @user_friend.save && @user_friend_me.save
       redirect_to friends_path
     else
       render "public/404.html"

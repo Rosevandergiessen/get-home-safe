@@ -1,4 +1,4 @@
 class Chatroom < ApplicationRecord
   has_many :messages
-  has_one :user_friend
+  has_many :user_friends
 end

@@ -8,7 +8,7 @@
           <% else %>
           <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class:"user-img-map"%>
           <% end %>
-    <h2><%= marker.first_name %></h2>
+    <h2><%= marker.first_name.capitalize %></h2>
     <p><%= marker.address %></p>
           <% if marker == current_user %>
           <p id="house">This is your own house</p>
