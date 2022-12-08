@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { right } from "@popperjs/core";
 // import 'mapbox-gl/dist/mapbox-gl.css';
 // Connects to data-controller="map"
 export default class extends Controller {
@@ -19,7 +20,7 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/rosevdg/clbdfwq0v001m14oz0eh6pen9",
       bounds: bounds,
-      attributionControl: false
+      attributionControl: false,
     })
 
     this.#addMarkersToMap()
