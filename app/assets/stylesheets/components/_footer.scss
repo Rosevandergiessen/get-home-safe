@@ -7,8 +7,7 @@
   width: 100vw;
   position: fixed;
   bottom: 0;
-  box-shadow: -3px -3px 5px $light-gray;
-  // border-top: 0.5px solid $purple;
+  border-top: 0.5px solid $purple;
 }
 .footer-links {
   display: flex;
@@ -47,7 +46,6 @@
 .helpbutton {
 font-size: 32px;
 font-weight: 300;
-height: 100%;
 padding: 0px 10vw;
 background-color: rgb(255, 203, 203);
 color: white;
