@@ -22,11 +22,13 @@ export default class extends Controller {
     })
 
     this.#addMarkersToMap()
+    let lastMarker = new mapboxgl.Marker()
+        .setLngLat([ this.markersValue[this.markersValue.length - 1].lng, this.markersValue[this.markersValue.length - 1].lat ])
+        .addTo(this.map)
 
     const timeInterval = () => {
         this.map.resize()
-        this.#addMarkersToMapCustom()
-        // this.#fitMapToMarkers();
+        lastMarker.setLngLat([ this.markersValue[this.markersValue.length - 1].lng, this.markersValue[this.markersValue.length - 1].lat ])
         setTimeout(() => {
           timeInterval()
         }, 500);
