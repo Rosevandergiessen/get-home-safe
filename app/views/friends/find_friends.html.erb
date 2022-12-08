@@ -22,7 +22,7 @@
   <% if user.photo.attached? %>
         <%= cl_image_tag user.photo.key, class: "findpicture"%>
         <% else %>
-        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "findpicture" %>
+        <%= image_tag "avatar.jpg", class: "findpicture" %>
       <% end %>
   <%= link_to user.first_name.upcase, friends_path(user: user.id), data: { turbo_method: :post } %>
   <p><%= user.phone_number %></p>

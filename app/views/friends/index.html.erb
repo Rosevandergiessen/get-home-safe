@@ -11,7 +11,7 @@
       <% if friend.photo.attached? %>
         <%= cl_image_tag friend.photo.key, class: "card-img"%>
         <% else %>
-        <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "card-img" %>
+        <%= image_tag "avatar.jpg", class: "card-img" %>
       <% end %>
 
         <%= link_to friend.first_name.upcase, profile_path(friend.id), class:"text" %>
