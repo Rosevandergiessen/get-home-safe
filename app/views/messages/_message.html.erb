@@ -6,7 +6,7 @@
         <% else %>
         <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class: "messagephoto" %>
       <% end %>
-    <%= message.user.first_name %></strong>
+    <%= message.user.first_name.capitalize %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
   <p><%= message.content %></p>
