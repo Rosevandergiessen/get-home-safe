@@ -42,13 +42,13 @@
     <% end %>
   <% end %>
 
-<% friends = [] %>
-<% Friend.where(user: current_user).each do |friend| %>
-<% friends += UserFriend.where(friend: friend) %>
-<% end %>
-<% friends.each do |friend| %>
-<%= link_to friend.user.first_name, chatroom_path(friend.chatroom) %>
-<% end %>
+<%# friends = [] %>
+<%# Friend.where(user: current_user).each do |friend| %>
+<%# friends += UserFriend.where(friend: friend) %>
+<%# end %>
+<%# friends.each do |friend| %>
+<%#= link_to friend.user.first_name, chatroom_path(friend.chatroom) %>
+<%# end %>
   </div>
 </div>
 

@@ -31,6 +31,8 @@
 
 .image {
   width: 80px;
+  height: 80px;
+  object-fit: cover;
   margin: 0px 10px;
   border: 1px solid black;
   opacity: 1;
