@@ -6,7 +6,7 @@
           <% if marker.photo.attached? %>
           <%= cl_image_tag marker.photo.key, class:"user-img-map"%>
           <% else %>
-          <%= image_tag "https://www.filosofie.nl/app/uploads//2020/06/camus-filosoof.jpg", class:"user-img-map"%>
+          <%= image_tag "avatar.jpg", class:"user-img-map"%>
           <% end %>
     <h2><%= marker.first_name.capitalize %></h2>
     <p><%= marker.address %></p>
