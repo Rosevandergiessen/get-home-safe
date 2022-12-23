@@ -1,6 +1,6 @@
 <div class="container">
   <div class="details-profile">
-    <h3 class="pt-3">MY PROFILE</h3>
+    <h5 class="pt-3">MY PROFILE</h5>
     <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, class: "rounded-circle picture opacity-100"%>
     <% else %>

@@ -13,6 +13,8 @@ export default class extends Controller {
     console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`)
   }
 
+  // build message view - separate styles to distinguish between sender and receiver
+  // ensure chatroom bounces down to the last message - doesn't start at the top again
   #buildMessageElement(currentUserIsSender, message) {
     return `
       <div class="message-row d-flex ${this.#justifyClass(currentUserIsSender)}">
@@ -38,6 +40,7 @@ export default class extends Controller {
     this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
+  // empty message box each time we want to send a new message/after message has been sent
   resetForm(event) {
     event.target.reset()
   }
