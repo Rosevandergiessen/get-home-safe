@@ -1,6 +1,6 @@
 
 # get home safe
-Safety app created with live location and tracking function, messaging/chatroom, and Twilio gem for instant SMS messaging when HELP button pressed. 
+Safety app created with live location and tracking function, messaging/chatroom, and Twilio gem for instant SMS messaging to all friends when HELP button pressed. 
 
 Developed with Ruby on Rails. 
 
