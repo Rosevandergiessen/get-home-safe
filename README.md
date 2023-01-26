@@ -1,12 +1,12 @@
 
-# get home safe
-Safety app with (broadcasting) live location, tracking functionality for your friends, a messaging/chatroom feature to chat with contacts added with phone numbers, and Twilio gem for instant SMS messaging to all friends when the HELP button is pressed. 
+# Get home safe #
+**Safety app with (broadcasting) live location, tracking functionality, a messaging/chatroom feature to chat with contacts, and Twilio gem for instant SMS messaging to all friends when the HELP button is pressed.**
 
-The following technologies were used to create this app:
-Framework: Ruby on Rails
-Front-end: HTML, Css, Sass, Javascript (Stimulus framework)
-Back-end: Ruby
-Deployment: Heroku
+:wrench:The following technologies were used to create this app:
+  * Framework: Ruby on Rails
+  * Front-end: HTML, Css, Sass, Javascript (Stimulus framework)
+  * Back-end: Ruby
+  * Deployment: Heroku
 
 
 
