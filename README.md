@@ -1,6 +1,6 @@
 
 # Get home safe #
-**Safety app with (broadcasting) live location, tracking functionality, a messaging/chatroom feature to chat with contacts, and Twilio gem for instant SMS messaging to all friends when the HELP button is pressed.**
+**Project was part of the 9-week bootcamp at Le Wagon Amsterdam. My two teammates and I developed a safety app with (broadcasting) live location, tracking functionality, a messaging/chatroom feature to chat with contacts, and Twilio gem for instant SMS messaging to all friends when the HELP button is pressed.**
 
 :wrench:The following technologies were used to create this app:
   * Framework: Ruby on Rails
